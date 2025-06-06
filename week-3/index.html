@@ -1,0 +1,79 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Manager</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      input,
+      textarea,
+      button {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+        padding: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>File Manager</h1>
+
+    <form action="/create" method="POST" target="_blank">
+      <h3>Create / Overwrite File</h3>
+      <input type="text" name="filename" placeholder="Filename" required />
+      <textarea name="content" placeholder="File content" required></textarea>
+      <button type="submit">Create File</button>
+    </form>
+
+    <form action="/append" method="POST" target="_blank">
+      <h3>Append to File</h3>
+      <input type="text" name="filename" placeholder="Filename" required />
+      <textarea
+        name="content"
+        placeholder="Content to append"
+        required
+      ></textarea>
+      <button type="submit">Append Content</button>
+    </form>
+
+    <form action="/rename" method="POST" target="_blank">
+      <h3>Rename File</h3>
+      <input
+        type="text"
+        name="filename"
+        placeholder="Current Filename"
+        required
+      />
+      <input
+        type="text"
+        name="newfilename"
+        placeholder="New Filename"
+        required
+      />
+      <button type="submit">Rename File</button>
+    </form>
+
+    <form action="/read" method="POST" target="_blank">
+      <h3>Read File</h3>
+      <input type="text" name="filename" placeholder="Filename" required />
+      <button type="submit">Read File</button>
+    </form>
+
+    <form action="/delete" method="POST" target="_blank">
+      <h3>Delete File</h3>
+      <input type="text" name="filename" placeholder="Filename" required />
+      <button type="submit">Delete File</button>
+    </form>
+  </body>
+</html>
